@@ -1,0 +1,33 @@
+server:
+  port: 8090
+  contextPath: /restapp
+
+management:
+  security:
+    enabled: false
+
+featureToggled:
+  app: on
+  test: off
+
+logPath: ./logs
+
+spring:
+  data:
+      elasticsearch:
+        cluster-name: "my-cluster"
+        cluster-nodes: "localhost:9200"
+  kafka:
+    consumer:
+      auto-offset-reset: earliest
+      group-id: boot
+    bootstrap-servers: localhost:9092,localhost:9093
+
+topic:
+  boot: boot.t
+
+elasticsearch:
+  host: localhost
+  port: 9300
+  cluster:
+    name: my-cluster
